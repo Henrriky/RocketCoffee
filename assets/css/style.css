@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --backgrond: #000;
+    --text-color: #FFF;
+    --button: #8257E5;
+    --border: #29292E;
+    --border-menu-mobile: #A8A8B3;
+    --height-nav: 9.472rem;
+    --active-menu-color: #E1E1E6;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    color: var(--text-color);
+    background-color: var(--backgrond);
+    background-image: url("../img/blur-mobile.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 50%;
+
+}
+
+body * {
+    font-family: 'Manrope', sans-serif;
+}
+
+body .blurLeft {
+    display: none;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -10;
+}
+
+body .blurRight {
+    display: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -10;
+}
+
+
+
+.wrapper {
+    width: 100%;
+    max-width: 1024px;
+    margin-inline: auto;
+}
+
+/* NAV */
+#navigation {
+    width: 100%;
+    margin-bottom: 8.85rem;
+}
+
+#navigation .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.5rem 2.5rem 2.572rem 2.6rem;
+    border-bottom: 1px solid var(--border);
+}
+
+#navigation .wrapper button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    animation: bounceInRight 1.5s ease-in-out;
+}
+
+#navigation .wrapper .logoMobile {
+    max-width: 100%;
+    display: initial;
+    animation: bounceInLeft 1.5s ease-in-out;
+}
+
+#navigation .wrapper .logoDesktop {
+    display: none;
+}
+
+#navigation .wrapper .closeMenu {
+    visibility: hidden;
+    display: none;
+}
+#navigation .wrapper .openMenu {
+    visibility: visible;
+    display: block;
+}
+
+
+
+/*===================MENU NAV==================*/
+/* #navigation .nav__menu.open*/
+
+.menuExpanded > :not(nav) {
+    visibility: hidden;
+}
+.menuExpanded {
+    overflow: hidden;
+}
+
+.menuExpanded #navigation .open {
+    width: 100%;
+    /* opacity: 1; */
+}
+
+#navigation .nav__menu {
+    background-color: var(--backgrond);
+    position: absolute;
+    top: var(--height-nav);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    /* opacity: 0; */
+    z-index: 1000;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+}
+
+#navigation .nav__menu ul {
+    list-style: none;
+}
+
+#navigation .nav__menu ul li {
+    border-bottom: 1px solid var(--border);
+    padding: 1.8rem 0rem 1.4rem 3.082rem;
+}
+
+#navigation .nav__menu ul li a{
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.459rem;
+    text-decoration: none;
+    color: var(--border-menu-mobile);
+}
+
+#navigation .nav__menu ul li:nth-child(1) a{
+    font-weight: bold;
+    color: var(--active-menu-color);
+}
+#navigation .nav__menu ul li:nth-child(1){
+    border-left: 5px solid var(--button);
+    padding-left: 2.582rem;
+}
+
+.menuExpanded #navigation .openMenu {
+    visibility: hidden;
+    display: none;
+}
+
+.menuExpanded #navigation .closeMenu {
+    visibility: visible;
+    display: block;
+}
+
+#navigation .takeCoffeeButton {
+    display: none;
+}
+
+
+/* HOME */
+#home {
+    width: 100%;
+}
+#home .wrapper {
+    text-align: center;
+}
+
+/* HEADER */
+
+#home .wrapper header {
+    margin: 0 auto;
+    max-width: 33.7rem;
+    margin-bottom: 8.8rem;
+}
+
+#home .wrapper h1 {
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 4.098rem;
+    letter-spacing: 0.05em;
+    animation: flipInX 1.5s ease-in-out;
+}
+
+/* BUTTON */
+#home .wrapper button {
+    margin-inline: auto;
+    background: none;
+    border-radius: .6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 3rem;
+    border: 1px solid var(--button);
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 9.8rem;
+    cursor: pointer;
+    animation: bounceInLeft 1.5s ease-in-out;
+}
+
+/* GREAT COFFE */
+#home .wrapper h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 6.8rem;
+    animation: flipInX 1.5s ease-in-out;
+}
+
+#home .wrapper h2:last-of-type {
+    color: var(--backgrond);
+    text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+    margin-bottom: 4rem;
+}
+
+/* IMG */
+#home .wrapper > img {
+    width: 100%;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+    body {
+        overflow: hidden;
+    }
+
+    /* RESETS */
+
+    body {
+        background: initial;
+        background-color: var(--backgrond);
+    }
+
+    #navigation {
+        animation: fadeInDown;
+        animation-duration: 1s;
+    }
+
+    #navigation .wrapper .logoMobile {
+        display: none;
+    }
+
+    #navigation .wrapper .logoDesktop {
+        display: initial;
+        animation: bounceInLeft 2s ease-in-out;
+    }
+
+    #navigation .wrapper .openMenu, .closeMenu {
+        display: none;
+    }
+
+    #navigation .wrapper {
+        border: none;
+        padding: initial;
+        width: max-content;
+    }
+
+    #navigation .nav__menu {
+        background-color: initial;
+        position: initial;
+        position: initial;
+        transition: initial;
+        overflow: initial;
+        width: initial;
+    }
+    #navigation .nav__menu ul li {
+        border: initial;
+        padding: initial;
+    }
+    
+    #navigation .nav__menu ul li a{
+        color: white;
+        font-weight: initial;
+        border: none;
+        padding: initial;
+    }
+
+    #navigation .nav__menu ul li:nth-child(1) a{
+        font-weight: initial;
+        color: white;
+    }
+    #navigation .nav__menu ul li:nth-child(1){
+        border-left: initial;
+        padding-left: initial;
+    }
+
+    #home .wrapper header, #home .wrapper button {
+        display: none;
+    }
+
+    #home {
+        overflow: hidden;
+    }
+
+
+    /* BACKGROUD */
+    body .blurLeft,body .blurRight {
+        display: initial;
+    }
+
+    /* NAV BAR */
+
+    #navigation {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: max-content;
+        padding: 5rem 0rem;
+        margin: 0 auto;
+        gap: 14rem;
+    }
+
+    #navigation .nav__menu ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3.243rem;
+    }
+    #navigation .nav__menu ul li {
+        width: max-content;
+    }
+    
+    #navigation .takeCoffeeButton {
+        display: initial;
+        margin-inline: auto;
+        background: none;
+        border-radius: .6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1.1rem 3.8rem;
+        border: 1px solid var(--button);
+        color: var(--text-color);
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        animation: bounceInRight 2s ease-in-out;
+    }
+
+    /* HOME */
+    #home .wrapper h2 {
+        font-weight: 700;
+        font-size: 8rem;
+        line-height: 10.928rem;
+        animation: flipInX ease-in-out;
+        animation-duration: 2s;
+    }
+
+    #home .wrapper h2:last-of-type {
+        margin-bottom: 6.3rem;
+    }
+
+    #home .wrapper > img {
+        /* width: max-content; */
+        /* height: 500px;
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%); */
+        margin-top: 3%;
+        width: 100%;
+        animation: pulse 2s ease-in-out;  
+        animation-iteration-count: infinite; 
+    }
+    
+
+}
